@@ -1,7 +1,7 @@
 #-*- coding: utf-8 -*-
 # Copyright: Simone Gaiarin <simgunz@gmail.com>
 # License: GNU GPL, version 3 or later; http://www.gnu.org/copyleft/gpl.html
-# Name: Minimize to tray plugin
+# Name: Minimize to Tray
 # Version: 0.1
 # Description: Minimize anki to tray when the X button is pressed
 # Homepage: https://github.com/simgunz/anki-plugins
