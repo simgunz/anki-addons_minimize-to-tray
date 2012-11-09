@@ -3,7 +3,7 @@
 # License: GNU GPL, version 3 or later; http://www.gnu.org/copyleft/gpl.html
 # Name: Minimize to Tray 2
 # Version: 0.1
-# Description: Minimize anki to tray when the X button is pressed
+# Description: Minimize anki to tray when the X button is pressed (Anki 2 version)
 # Homepage: https://github.com/simgunz/anki-plugins
 # Report any problem in the github issues section
 
