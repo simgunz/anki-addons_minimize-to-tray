@@ -12,6 +12,7 @@ from PyQt4 import QtCore
 import aqt
 from anki.hooks import addHook
 
+
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
@@ -50,6 +51,9 @@ def trayActivated(reason):
             showAll()
 
 def createSysTray():
+    # Check if self (i.e., mw.aqt) already has a trayIcon
+    if hasattr(self, 'trayIcon'):
+        return
     self.anki_visible = True
     self.last_focus = self
     self.trayIcon = QSystemTrayIcon(self)
