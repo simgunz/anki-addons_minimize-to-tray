@@ -2,7 +2,7 @@
 # Copyright: Simone Gaiarin <simgunz@gmail.com>
 # License: GNU GPL, version 3 or later; http://www.gnu.org/copyleft/gpl.html
 # Name: Minimize to Tray 2
-# Version: 0.1
+# Version: 0.2
 # Description: Minimize anki to tray when the X button is pressed (Anki 2 version)
 # Homepage: https://github.com/simgunz/anki-plugins
 # Report any problem in the github issues section
@@ -12,6 +12,8 @@ from PyQt4 import QtCore
 import aqt
 from anki.hooks import addHook
 
+# Set this variable to True to hide all windows on startup, otherwise set it to False
+HIDE_ON_STARTUP = False
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -91,5 +93,7 @@ else:
     self = aqt.mw
     addHook("profileLoaded", setCloseEventAction)
     addHook("profileLoaded", createSysTray)
+    if HIDE_ON_STARTUP:
+        addHook("profileLoaded", hideAll)
     self.closeEvent = myCloseEvent
     self.onClose = myOnClose
