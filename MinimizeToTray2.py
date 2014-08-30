@@ -74,14 +74,19 @@ def myOnClose():
     aw = self.app.activeWindow()
     if not aw or aw == self:
         self.unloadProfile(browser=False)
+        self.trayIcon.hide()
         self.app.quit()
     else:
         aw.close()
 
 def myCloseEvent(event):
     "User hit the X button"
-    trayActivated(QSystemTrayIcon.Trigger)
-    event.ignore();
+    if self.anki_visible:
+        self.col.save()
+        trayActivated(QSystemTrayIcon.Trigger)
+        event.ignore();
+    else:
+        myOnClose()
 
 def setCloseEventAction():
     self.disconnect(self.form.actionExit, QtCore.SIGNAL("triggered()"), self, QtCore.SLOT("close()"))
